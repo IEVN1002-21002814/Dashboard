@@ -1,0 +1,63 @@
+<div class="w-100 rounded-4 bg-gris d-flexeo d-column lateral-info-user p-3 gap-2">
+    <div class="w-100 date-container d-flexeo d-row bg-white rounded-pill py-2 px-3 mb-2">
+        <div class="dia-container">
+            <h6>{{currentDate.day}}/{{currentDate.month}}/{{currentDate.year}}</h6>
+        </div>
+        <div class="hora-container">
+            <h6>{{currentTime.hours }}:{{currentTime.minutes}}</h6>
+        </div>
+    </div>
+    <div class="w-100 lateral-user-img d-column d-flexeo d-row mb-2 gap-4">
+        <!-- <div class="lateral-user-img-img rounded-circle d-flexeo bg-white p-4">
+            <i class='bx bx-user'></i>
+        </div> -->
+        <div *ngIf="this.ses.alumnos[0].nivel === 'Lectura'" class="lateral-user-img-img rounded-circle d-flexeo bg-white p-3">
+            <i class='bx bx-book'></i>
+        </div>
+        <div *ngIf="this.ses.alumnos[0].nivel === 'Soporte'" class="lateral-user-img-img rounded-circle d-flexeo bg-white p-3">
+            <i class='bx bx-support'></i>
+        </div>
+        <div *ngIf="this.ses.alumnos[0].nivel === 'Admin'" class="lateral-user-img-img rounded-circle d-flexeo bg-white p-3">
+            <i class='bx bx-user-circle'></i>
+        </div>
+        <div class="user-name-item pt-2 ">
+            <h6 class="m-0">{{this.ses.alumnos[0].nombre}}</h6>
+            <small>{{this.ses.alumnos[0].nivel}}</small>
+        </div>
+    </div>
+    <div class="w-100 lateral-user-nivel bg-white rounded-4 p-2 d-flexeo d-column mb-2 gap-3">
+        <div class="w-100 user-nivel-label d-flexeo d-row bg-white gap-2">
+           <div class="user-label-item d-flexeo d-row">
+                Lectura
+                <div class="rounded-circle p-1 d-flexeo bg-white">
+                    <i class='bx bx-book'></i>
+                </div>
+           </div>
+           <div class="user-label-item d-flexeo d-row">
+                Soporte
+                <div class="rounded-circle p-1 d-flexeo bg-white">
+                    <i class='bx bx-support'></i>
+                </div>
+           </div>
+           <div class="user-label-item d-flexeo d-row">
+                Admin
+                <div class="rounded-circle p-1 d-flexeo bg-white">
+                    <i class='bx bx-user-circle'></i>
+                </div>
+           </div>
+        </div>
+    </div>
+    <div class="w-100 lateral-user-information bg-white rounded-4 p-2 d-flexeo d-column mb-2 gap-3">
+        <h6 class="w-100">Información:</h6>
+
+        <div class="w-100 lateral-user-information-item d-flexeo d-column bg-white gap-2">
+          <small class="m-0"><b>No. Identficación: </b>  {{this.ses.alumnos[0].id}}</small>
+          <small class="m-0"><b>Usuario: </b> {{this.ses.alumnos[0].username}}</small>
+          <small class="m-0"><b>Correo: </b> {{this.ses.alumnos[0].correo}}</small>  
+        </div>
+    </div>
+    <button (click)="cerrarSesion()" class="w-100 button-sesion rounded-pill py-2 px-3 ps-2 color-b border border-0 d-flexeo d-row gap-2 trans" type="button" id="btn-sesion">
+        <i class='bx bx-arrow-back rounded-circle p-2 d-flexeo trans'></i>
+        Cerrar Sesión
+    </button>
+</div>

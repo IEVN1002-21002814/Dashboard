@@ -1,0 +1,194 @@
+    <div class="row h-100">
+        <div class="col-9">
+            <div class="w-100 h-100">
+                <app-nav></app-nav>
+                <div class="w-100 mt-3">
+                    <h4 class="w-100 bg-gris p-3 rounded-4"> Bienvenido al <b>DASHBOARD</b></h4>
+                    
+                </div>
+                <div class="w-100 h-100 container-general">
+                    <div class="row h-100">
+                        <div class="col-6">
+                            <div class="w-100 h-100 d-flexeo d-column container-general-das py-3 gap-3">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div class="w-100 bg-gris p-3 rounded-4 general-card d-flexeo d-column gap-4">
+                                            <h5 class="py-2 px-3 rounded-pill bg-negro color-b">Usuarios de Administrador</h5>
+                                            <div class="w-100 items-cards-container">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                            <i class='bx bx-book bg-white rounded-circle d-flexeo p-3'></i>
+                                                            <div class="d-flexeo d-column gap-2  ">
+                                                                <h6><b>Tipo Lectura</b></h6>
+                                                                <small>Usuarios: {{this.conLectura}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                            <i class='bx bx-support bg-white rounded-circle d-flexeo p-3'></i>
+                                                            <div class="d-flexeo d-column gap-2  ">
+                                                                <h6><b>Tipo Soporte</b></h6>
+                                                                <small>Usuarios: {{this.conSoporte}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                            <i class='bx bx-user-circle bg-white rounded-circle d-flexeo p-3'></i>
+                                                            <div class="d-flexeo d-column gap-2  ">
+                                                                <h6><b>Tipo Admin</b></h6>
+                                                                <small>Usuarios: {{this.conAdmin}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <div class="w-100 bg-gris p-3 rounded-4 general-card d-flexeo d-column gap-4">
+                                            <h5 class="py-2 px-3 rounded-pill bg-negro color-b ">Usuarios de APP</h5>
+                                            <div class="w-100 items-cards-container">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                            <i class='bx bx-wallet bg-white rounded-circle d-flexeo p-3'></i>
+                                                            <div class="d-flexeo d-column gap-2  ">
+                                                                <h6><b>Suscritos</b></h6>
+                                                                <small>Usuarios: {{this.contPaog}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                            <i class='bx bx-pin bg-white rounded-circle d-flexeo p-3'></i>
+                                                            <div class="d-flexeo d-column gap-2  ">
+                                                                <h6><b>Gratuitos</b></h6>
+                                                                <small>Usuarios: {{this.contGratuito}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                            <i class='bx bxs-dashboard bg-white rounded-circle d-flexeo p-3'></i>
+                                                            <div class="d-flexeo d-column gap-2  ">
+                                                                <h6><b>Total</b></h6>
+                                                                <small>Usuarios: {{this.contTotal}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="w-100 h-100 d-flexeo d-column container-general-das py-3 gap-3">
+                                <div class="w-100 bg-gris p-3 rounded-4 general-card d-flexeo d-column gap-4">
+                                    <h5 class="py-2 px-3 rounded-pill bg-negro color-b ">Lugares de APP</h5>
+                                    <div class="w-100 items-cards-container">
+                                        <div class="row">
+                                            <div class="col-4 mb-3">
+                                                <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column cat-1 color-b">
+                                                    <i class='bx bx-restaurant bg-white rounded-circle d-flexeo p-3'></i>
+                                                    <div class="d-flexeo d-column gap-2  ">
+                                                        <h6><b>Restaurantes</b></h6>
+                                                        <small>Total: {{this.conLectura}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 mb-3">
+                                                <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column cat-2 color-b">
+                                                    <i class='bx bxs-palette bg-white rounded-circle d-flexeo p-3'></i>
+                                                    <div class="d-flexeo d-column  ">
+                                                        <h6 class="text-center w-100"><b>Cultura y Arte</b></h6>
+                                                        <small>Total: {{this.conLectura}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 mb-3">
+                                                <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column cat-3 color-b">
+                                                    <i class='bx bxs-party bg-white rounded-circle d-flexeo p-3'></i>
+                                                    <div class="d-flexeo d-column  ">
+                                                        <h6 class="text-center w-100"><b>Vida Nocturna</b></h6>
+                                                        <small>Total: {{this.conLectura}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 mb-3">
+                                                <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column cat-4 color-b">
+                                                    <i class='bx bxs-bowling-ball bg-white rounded-circle d-flexeo p-3'></i>
+                                                    <div class="d-flexeo d-column  ">
+                                                        <h6 class="text-center w-100"><b>Recreación</b></h6>
+                                                        <small>Total: {{this.conLectura}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 mb-3">
+                                                <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column cat-5 color-b">
+                                                    <i class='bx bxs-donate-heart bg-white rounded-circle d-flexeo p-3'></i>
+                                                    <div class="d-flexeo d-column  ">
+                                                        <h6 class="text-center w-100"><b>Salud y Bienestar</b></h6>
+                                                        <small>Total: {{this.conLectura}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 mb-3">
+                                                <div class="w-100 item-card-se rounded-4 p-3 d-flexeo d-column bg-negro color-b">
+                                                    <i class='bx bxs-dashboard bg-white rounded-circle d-flexeo p-3'></i>
+                                                    <div class="d-flexeo d-column  ">
+                                                        <h6 class="text-center w-100"><b>Total</b></h6>
+                                                        <small>Total: {{this.conLectura}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="w-100 h-100 d-flexeo d-column container-general-das py-3 ">
+                                <div class="w-100 bg-white p-3 rounded-4 general-card big-h">
+                                    <div class="w-100 h-100 bg-white p-3 rounded-4 general-card normal-h d-flexeo d-column">
+                                        <h4 class="w-100 text-center rounded-pill py-2 px-3 bg-negro color-b">Lugares en FINDE App Web</h4>
+                                        <div class="w-100 items-cards-container d-flexeo d-row gap-2">
+                                            <div class="item-card-se rounded-4 p-2 d-flexeo d-row gap-4 cat-1 color-b"  >
+                                                <i class='bx bx-restaurant bg-white rounded-circle d-flexeo p-3'></i>
+                                                <h4>10</h4>
+                                            </div>
+                                            <div class="item-card-se rounded-4 p-2 d-flexeo d-row gap-4 cat-2 color-b"  >
+                                                <i class='bx bxs-palette bg-white rounded-circle d-flexeo p-3'></i>
+                                                <h4>10</h4>
+                                            </div>
+                                            <div class="item-card-se rounded-4 p-2 d-flexeo d-row gap-4 cat-3 color-b"  >
+                                                <i class='bx bxs-party bg-white rounded-circle d-flexeo p-3'></i>
+                                                <h4>10</h4>
+                                            </div>
+                                            <div class="item-card-se rounded-4 p-2 d-flexeo d-row gap-4 cat-4 color-b"  >
+                                                <i class='bx bxs-bowling-ball bg-white rounded-circle d-flexeo p-3'></i>
+                                                <h4>10</h4>
+                                            </div>
+                                            <div class="item-card-se rounded-4 p-2 d-flexeo d-row gap-4 cat-5 color-b"  >
+                                                <i class='bx bxs-donate-heart bg-white rounded-circle d-flexeo p-3'></i>
+                                                <h4>10</h4>
+                                            </div>
+                                            <div class="item-card-se rounded-4 p-2 d-flexeo d-row gap-4 bg-negro color-b"  >
+                                                <i class='bx bxs-dashboard bg-white rounded-circle d-flexeo p-3'></i>
+                                                <h4>50</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <app-user-nav ></app-user-nav>
+        </div>
+    </div>

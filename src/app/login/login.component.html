@@ -1,0 +1,26 @@
+<div class="row h-100">
+    <div class="offset-4 col-4 offset-sm-2 col-sm-8 offset-lg-4 col-lg-4">
+        <div class="card-login w-100 h-100 bg-white rounded-4 p-3 d-flexeo d-column gap-4">
+                <h4 class="w-100 text-center">Sistema de Administración de Cardiel</h4>
+                
+                <div class="form-opcion-container w-100 h-auto d-flexeo d-column gap-4 ocultar" id="form-opcion-container-ingreso">
+                    <form class="w-100" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg rounded-4 p-3 focus-ring focus-ring-light border" 
+                            id="inputEmail" placeholder="Nombre de Usuario" autocomplete="false"
+                            formControlName="username">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control form-control-lg rounded-4 p-3 focus-ring focus-ring-light border" 
+                            id="inputPassword" placeholder="Contraseña"
+                            formControlName="password">
+                        </div>
+                        <div *ngIf="fatal" class="w-100 alert alert-danger text-center" role="alert">
+                            Verifica los datos.
+                        </div>
+                        <button type="submit" class="rounded-pill py-3 px-4 border border-0 w-100 btn-submit-form trans">Ingresar</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>

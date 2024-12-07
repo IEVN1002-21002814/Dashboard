@@ -1,0 +1,185 @@
+<div class="row h-100">
+    <div class="col-9">
+        <div class="w-100 h-100">
+            <app-nav></app-nav>
+            <div class="w-100 h-100 container-general py-3">
+                <div class="row">
+                    <div class="col-12 mb-3" *ngIf="registrar">
+                        <div class="w-100 rounded-4 bg-gris p-3">
+                            <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Registrar Usuario</h5>
+                            <form class="w-100 " [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-5 mb-4">
+                                        <input type="text" placeholder="Nombre Completo"
+                                        formControlName="fullName"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                            Ingresa el nombre completo, nombres y apellidos.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Username"
+                                        formControlName="username"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                           Ingresa el nombre de usuario. Con el accederas.
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mb-4">
+                                        <input type="email" placeholder="Correo Electrónico"
+                                        formControlName="email"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                            Ingresa un correo electónico valido. Ejemplo: ejemplo&#64;correo.com.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-2">
+                                        <input type="text" placeholder="Contraseña"
+                                        formControlName="password"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                           Ingresa la contraseña del usuario.
+                                        </div>
+                                    </div>  
+                                    <div class="col-3 mb-2">
+                                        <select formControlName="nivel" class="form-select rounded-4 p-3 focus-ring focus-ring-light border">
+                                            <option value="Lectura" selected>Lectura</option>
+                                            <option value="Soporte">Soporte</option>
+                                            <option value="Admin">Admin</option>
+                                          </select>
+                                        <div class="form-text ms-1">
+                                            Especifica el nivel de acceso del usuario.
+                                        </div>
+                                    </div>
+                                    <div class="col-2 mb-2">
+                                        <button type="submit" class="w-100 rounded-pill py-2 px-3 d-flexeo d-row gap-2 btn-genera-crud btn-guardar border border-0 trans">
+                                            <i class='bx bxs-plus-circle'></i> Agregar
+                                        </button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <div *ngIf="fatal" class="w-100 alert alert-danger text-center" role="alert">
+                                            Verifica los datos.
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3" *ngIf="actualizar">
+                        <div class="w-100 h-100 rounded-4 bg-gris p-3 container-table-user overflow-hidden h-auto">
+                            <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Actualizar Usuario</h5>
+                            <form class="w-100 " [formGroup]="updateForm" (ngSubmit)="sendeditedData()">
+                                <div class="row">
+                                    <div class="col-5 mb-4">
+                                        <input type="text" placeholder="Nombre Completo"
+                                        formControlName="fullName"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                            Ingresa el nombre completo, nombres y apellidos.
+                                        </div>
+                                        <input type="hidden" formControlName="id_admin">
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Username"
+                                        formControlName="username"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                           Ingresa el nombre de usuario. Con el accederas.
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mb-4">
+                                        <input type="email" placeholder="Correo Electrónico"
+                                        formControlName="email"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                            Ingresa un correo electónico valido. Ejemplo: ejemplo&#64;correo.com.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-2">
+                                        <input type="text" placeholder="Contraseña"
+                                        formControlName="password"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                           Ingresa la contraseña del usuario.
+                                        </div>
+                                    </div>  
+                                    <div class="col-3 mb-2">
+                                        <select formControlName="nivel" class="form-select rounded-4 p-3 focus-ring focus-ring-light border">
+                                            <option value="Lectura" selected>Lectura</option>
+                                            <option value="Soporte">Soporte</option>
+                                            <option value="Admin">Admin</option>
+                                          </select>
+                                        <div class="form-text ms-1">
+                                            Especifica el nivel de acceso del usuario.
+                                        </div>
+                                    </div>
+                                    <div class="col-2 mb-2">
+                                        <button type="submit" class="mb-2 w-100 rounded-pill py-2 px-3 d-flexeo d-row gap-0 btn-genera-crud btn-guardar border border-0 trans">
+                                            <i class='bx bx-up-arrow-alt'></i> Actualizar
+                                        </button>
+                                        <button type="button" (click)="cancelEditing()" class="w-100 rounded-pill py-2 px-3 d-flexeo d-row gap-2 btn-genera-crud btn-elimianr border border-0 trans">
+                                            <i class='bx bx-x-circle'></i> Cancelar
+                                        </button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <div *ngIf="fatal" class="w-100 alert alert-danger text-center" role="alert">
+                                            Verifica los datos.
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <div class="w-100 h-100 rounded-4 bg-gris p-3 container-table-user overflow-hidden h-auto">
+                            <div class="w-100 h-100 rounded-3 bg-white overflow-hidden">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Nivel</th>
+                                            <th scope="col">Contraseña</th>
+                                            <th scope="col">Editar</th>
+                                            <th scope="col">Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let admin of adminsArray">
+                                            <th scope="row">{{ admin.id }}</th>
+                                            <td>{{ admin.nombre }}</td>
+                                            <td>{{ admin.username }}</td>
+                                            <td>{{ admin.correo }}</td>
+                                            <td>{{ admin.nivel }}</td>
+                                            <td>{{ admin.contrasenia }}</td>
+                                            <td>
+                                                <button (click)="editarUsersDash(admin.id)" type="button"  class="rounded-circle d-flexeo btn-genera-crud btn-editar p-2 border border-0 trans" type="button">
+                                                    <i class='bx bxs-edit-alt'></i>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button (click)="deleteUsersDash(admin.id)" class="rounded-circle d-flexeo btn-genera-crud btn-elimianr p-2 border border-0 trans" type="button">
+                                                    <i class='bx bxs-trash'></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <app-user-nav ></app-user-nav>
+    </div>
+</div>
+

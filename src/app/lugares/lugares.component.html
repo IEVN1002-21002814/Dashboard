@@ -1,0 +1,528 @@
+<div class="row h-100">
+    <div class="col-9">
+        <div class="w-100 h-100">
+            <app-nav></app-nav>
+            <div class="w-100 h-100 container-general py-3">
+                <div class="row">
+                    <div class="col-12 mb-3" *ngIf="registrar">
+                        <div class="w-100 rounded-4 bg-gris p-3">
+                            <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Registrar Lugar</h5>
+                            <form class="w-100 " [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-12 mb-1">
+                                        <h5>Información General del Lugar</h5>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Nombre Completo"
+                                        formControlName="fullName"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                            Ingresa el nombre completo del lugar.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="email" placeholder="Correo Electrónico"
+                                        formControlName="email"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                            Ingresa un correo electónico valido.
+                                        </div>
+                                    </div>
+                                    <div class="col-2 mb-4">
+                                        <input type="text" placeholder="Contraseña"
+                                        formControlName="password"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                           Ingresa la contraseña del lugar.
+                                        </div>
+                                    </div>  
+                                    <div class="col-2 mb-4">
+                                        <input type="text" placeholder="78"
+                                        formControlName="comentarios"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                          Ingresa el número de comentarios.
+                                        </div>
+                                    </div>
+                                    <div class="col-2 mb-4">
+                                        <input type="text" placeholder="4.6"
+                                        formControlName="calificacion"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                          Ingresa la calificación del lugar.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <select formControlName="categorias" 
+                                        class="form-select rounded-4 p-3 focus-ring focus-ring-light border"
+                                        placeholder="categoria">
+                                            <option value="1">Restaurantes</option>
+                                            <option value="2">Cultura y Arte</option>
+                                            <option value="3">Salud y Bienestar</option>
+                                            <option value="4">Vida Nocturna</option>
+                                            <option value="5">Recreación y Diversión</option>
+                                            </select>
+                                        <div class="form-text ms-1">
+                                            Especifica el tipo de categoria
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mb-1">
+                                        <textarea class="form-control rounded-4 p-3 focus-ring focus-ring-light border" aria-label="With textarea"
+                                        placeholder="Pizza, Italiano, Cena" formControlName="palabras"
+                                        ></textarea>
+                                        <div class="form-text ms-1">
+                                            Ingresa las palabras clave separadas cor una coma.
+                                        </div>
+                                    </div>
+                                    <div class="col-5 mb-1">
+                                        <textarea class="form-control rounded-4 p-3 focus-ring focus-ring-light border" aria-label="With textarea"
+                                        placeholder="Descripción..." formControlName="descripcion"
+                                        ></textarea>
+                                        <div class="form-text ms-1">
+                                            Ingresa la descripción del lugar.
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-12 mb-1">
+                                        <h5>Ubicación del Lugar</h5>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                      <input type="text" placeholder="Dirección"
+                                      formControlName="direccion"
+                                      class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                      <div class="form-text ms-1">
+                                        Ingresa la dirección del lugar.
+                                      </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Link de Google"
+                                        formControlName="link"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                          Ingresa el link de Google.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Longitud"
+                                        formControlName="longitud"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                          Ingresa la Longitud del lugar.
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Latitud"
+                                        formControlName="latitud"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                          Ingresa la Latitud del lugar.
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-12 mb-1">
+                                        <h5>Horarios del Lugar</h5>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="lunesSelect">Lunes</label>
+                                            <select formControlName="lunesHorario" (change)="toggleInputs('lunes')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['lunes']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPlunes"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['lunes']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOlunes"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="martesSelect">Martes</label>
+                                            <select formControlName="martesHorario" (change)="toggleInputs('martes')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['martes']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPmartes"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['martes']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOmartes"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="miercolesSelect">Miércoles</label>
+                                            <select formControlName="miercolesHorario" (change)="toggleInputs('miercoles')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['miercoles']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPmiercoles"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['miercoles']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOmiercoles"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="juevesSelect">Jueves</label>
+                                            <select formControlName="juevesHorario" (change)="toggleInputs('jueves')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['jueves']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPjueves"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['jueves']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOjueves"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="viernesSelect">Viernes</label>
+                                            <select formControlName="viernesHorario" (change)="toggleInputs('viernes')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['viernes']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPviernes"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['viernes']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOviernes"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="sabadoSelect">Sábado</label>
+                                            <select formControlName="sabadoHorario" (change)="toggleInputs('sabado')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['sabado']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPsabado"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['sabado']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOsabado"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-1">
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4" for="domingoSelect">Domingo</label>
+                                            <select formControlName="domingoHorario" (change)="toggleInputs('domingo')"
+                                                class="form-select rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                                <option value="open">Abierto</option>
+                                                <option value="close">Cerrado</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="isOpen['domingo']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">De:</label>
+                                            <input type="time" formControlName="OPdomingo"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                        <div *ngIf="isOpen['domingo']" class="input-group mb-3">
+                                            <label class="input-group-text rounded-start-4">Hasta:</label>
+                                            <input type="time" formControlName="CLOdomingo"
+                                                class="form-control rounded-end-4 p-3 focus-ring focus-ring-light border">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-2 mb-2">
+                                        <button type="submit" class="w-100 rounded-pill py-2 px-3 d-flexeo d-row gap-2 btn-genera-crud btn-guardar border border-0 trans">
+                                            <i class='bx bxs-plus-circle'></i> Agregar
+                                        </button>
+                                    </div>
+                                    <div class="col-4 mb-2">
+                                        <div *ngIf="fatal" class="w-100 alert alert-danger text-center" role="alert">
+                                            Verifica los datos.
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-3" *ngIf="actualizar">
+                        <div class="w-100 h-100 rounded-4 bg-gris p-3 container-table-user overflow-hidden h-auto">
+                            <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Actualizar Usuario</h5>
+                            <form class="w-100 " [formGroup]="updateForm" (ngSubmit)="sendeditedData()">
+                              <div class="row">
+                                  <div class="col-4 mb-4">
+                                      <input type="text" placeholder="Nombre Completo"
+                                      formControlName="fullName"
+                                      class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                      <div class="form-text ms-1">
+                                          Ingresa el nombre completo, nombres y apellidos.
+                                      </div>
+                                  </div>
+                                  <input type="hidden" formControlName="id_user">
+                                  <div class="col-3 mb-4">
+                                      <input type="email" placeholder="Correo Electrónico"
+                                      formControlName="email"
+                                      class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                      <div class="form-text ms-1">
+                                          Ingresa un correo electónico valido.
+                                      </div>
+                                  </div>
+                                    <div class="col-3 mb-4">
+                                        <input type="text" placeholder="Teléfono"
+                                        formControlName="telefono"
+                                        class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <div class="form-text ms-1">
+                                        Ingresa el telefono del usuario.
+                                        </div>
+                                    </div>
+                                <div class="col-2 mb-2">
+                                    <select formControlName="suscripción" class="form-select rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <option value="Pago">Pago</option>
+                                        <option value="Gratuito">Gratuito</option>
+                                      </select>
+                                    <div class="form-text ms-1">
+                                        Especifica el tipo de suscripción.
+                                    </div>
+                                </div>
+                                <div class="col-3 mb-4">
+                                    <input type="date" placeholder="Fecha Nacimineto"
+                                    formControlName="datebirth"
+                                    class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                    <div class="form-text ms-1">
+                                    Ingresa la fecha de nacimiento del usuario.
+                                    </div>
+                                </div>
+                                <div class="col-3 mb-4">
+                                    <input type="text" placeholder="Dirección"
+                                    formControlName="direccion"
+                                    class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                    <div class="form-text ms-1">
+                                      Ingresa la dirección del usuario.
+                                    </div>
+                                  </div>
+                                  <div class="col-3 mb-2">
+                                    <select formControlName="estado" class="form-select rounded-4 p-3 focus-ring focus-ring-light border">
+                                        <option value="Aguascalientes">Aguascalientes</option>
+                                        <option value="Baja California">Baja California</option>
+                                        <option value="Baja California Sur">Baja California Sur</option>
+                                        <option value="Campeche">Campeche</option>
+                                        <option value="Chiapas">Chiapas</option>
+                                        <option value="Chihuahua">Chihuahua</option>
+                                        <option value="Ciudad de México">Ciudad de México</option>
+                                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                                        <option value="Colima">Colima</option>
+                                        <option value="Durango">Durango</option>
+                                        <option value="Guanajuato">Guanajuato</option>
+                                        <option value="Guerrero">Guerrero</option>
+                                        <option value="Hidalgo">Hidalgo</option>
+                                        <option value="Jalisco">Jalisco</option>
+                                        <option value="Estado de México">Estado de México</option>
+                                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                                        <option value="Morelos">Morelos</option>
+                                        <option value="Nayarit">Nayarit</option>
+                                        <option value="Nuevo León">Nuevo León</option>
+                                        <option value="Oaxaca">Oaxaca</option>
+                                        <option value="Puebla">Puebla</option>
+                                        <option value="Querétaro">Querétaro</option>
+                                        <option value="Quintana Roo">Quintana Roo</option>
+                                        <option value="San Luis Potosí">San Luis Potosí</option>
+                                        <option value="Sinaloa">Sinaloa</option>
+                                        <option value="Sonora">Sonora</option>
+                                        <option value="Tabasco">Tabasco</option>
+                                        <option value="Tamaulipas">Tamaulipas</option>
+                                        <option value="Tlaxcala">Tlaxcala</option>
+                                        <option value="Veracruz">Veracruz</option>
+                                        <option value="Yucatán">Yucatán</option>
+                                        <option value="Zacatecas">Zacatecas</option>
+                                      </select>
+                                    <div class="form-text ms-1">
+                                        Especifica el estado de residencia del usuario.
+                                    </div>
+                                </div>
+  
+                                <div class="col-3 mb-4">
+                                    <input type="text" placeholder="Código Postal"
+                                    formControlName="cp"
+                                    class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                    <div class="form-text ms-1">
+                                      Ingresa el código postal del usuario.
+                                    </div>
+                                  </div>
+                                  <div class="col-3 mb-2">
+                                      <input type="text" placeholder="Contraseña"
+                                      formControlName="password"
+                                      class="form-control rounded-4 p-3 focus-ring focus-ring-light border">
+                                      <div class="form-text ms-1">
+                                         Ingresa la contraseña del usuario.
+                                      </div>
+                                  </div>  
+                                  <div class="col-3 mb-2">
+                                      <select formControlName="genero" class="form-select rounded-4 p-3 focus-ring focus-ring-light border">
+                                          <option value="Masculino">Masculino</option>
+                                          <option value="Femenino">Femenino</option>
+                                          <option value="Otro">Otro</option>
+                                        </select>
+                                      <div class="form-text ms-1">
+                                          Especifica el genero del usuario.
+                                      </div>
+                                  </div>
+                                  <div class="col-2 mb-2">
+                                      <button type="submit" class="mb-2 w-100 rounded-pill py-2 px-3 d-flexeo d-row gap-0 btn-genera-crud btn-guardar border border-0 trans">
+                                          <i class='bx bx-up-arrow-alt'></i> Actualizar
+                                      </button>
+                                      <button type="button" (click)="cancelEditing()" class="w-100 rounded-pill py-2 px-3 d-flexeo d-row gap-2 btn-genera-crud btn-elimianr border border-0 trans">
+                                          <i class='bx bx-x-circle'></i> Cancelar
+                                      </button>
+                                  </div>
+                                  <div class="col-4 mb-2">
+                                      <div *ngIf="fatal" class="w-100 alert alert-danger text-center" role="alert">
+                                          Verifica los datos.
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                        </div>
+                    </div>
+  
+                    <div class="col-12 mb-3">
+                          <div class="row h-100">
+  
+                               <div class="col-12 mb-3" *ngFor="let lugar of adminsArray">
+                                  <div class="w-100 rounded-4 p-3 container-display bg-gris d-flexeo d-column gap-2">
+                                      <div class="w-100 d-flexeo d-row gap-2 start-ali border-custom-4">
+                                          <i class='bx bx-user rounded-circle p-2 bg-white d-flexeo'></i>
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Nombre:  </small>
+                                              <p><b> {{ lugar.nombre }}</b></p>
+                                          </div>
+                                      </div>
+                                      <div class="w-100 d-flexeo d-row   separre">
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Correo electónico:  </small>
+                                              <p><b> {{ lugar.correo }}</b></p>
+                                          </div>
+                                          <div class="d-flexeo d-column start-ali">
+                                            <small>Palabras Clave:  </small>
+                                            <p><b> {{ lugar.palabras_clave }}</b></p>
+                                        </div>
+                                          <div class="d-flexeo d-column start-ali">
+                                              <p class="rounded-pill bg-white px-3 py-2 d-flexeo gap-1"><i class='bx bxs-star'></i><b> {{ lugar.calificacion }}</b></p>
+                                          </div>
+                                          <div class="d-flexeo d-column start-ali">
+                                              <p class="rounded-pill bg-white px-3 py-2 d-flexeo gap-1 "><i class='bx bxs-message-square-dots'></i><b> {{ lugar.comentarios }}</b></p>
+                                          </div>
+                                          <div class="d-flexeo d-column start-ali">
+                                            <p *ngIf="lugar.categoria === '1'" >
+                                            <i class='bx bx-restaurant cat-1 color-b rounded-circle d-flexeo p-2'></i>
+                                            </p>
+                                            <p *ngIf="lugar.categoria === '2'" >
+                                            <i class='bx bxs-palette cat-2 color-b rounded-circle d-flexeo p-2'></i>
+                                            </p>
+                                            <p *ngIf="lugar.categoria === '3'" >
+                                            <i class='bx bxs-party cat-3 color-b rounded-circle d-flexeo p-2'></i>
+                                            </p>
+                                            <p *ngIf="lugar.categoria === '5'" >
+                                            <i class='bx bxs-donate-heart cat-5 color-b rounded-circle d-flexeo p-2'></i>
+                                            </p>
+                                            <p *ngIf="lugar.categoria === '4'" >
+                                            <i class='bx bxs-bowling-ball cat-4 color-b rounded-circle d-flexeo p-2'></i>
+                                            </p>
+                                        </div>
+                                          
+                                      </div>
+                                      <div class="w-100 d-flexeo d-row gap-2 separre">
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Link Google:  </small>
+                                              <p><b>{{ lugar.link_google }} </b></p>
+                                          </div>
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Longitud:  </small>
+                                              <p><b> {{ lugar.longitud }}</b></p>
+                                          </div>
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Latitud:  </small>
+                                              <p><b> {{ lugar.latitud }}</b></p>
+                                          </div>
+                                      </div>
+                                      <div class="w-100 d-flexeo d-row gap-2 separre">
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Descripción:  </small>
+                                              <p><b> {{ lugar.descripcion }}</b></p>
+                                          </div>
+                                      </div>                                    
+                                      <div class="w-100 d-flexeo d-row gap-2 separre">
+                                          <div class="d-flexeo d-column start-ali">
+                                              <small>Dirección:  </small>
+                                              <p><b> {{ lugar.direccion }}</b></p>
+                                          </div>
+                                              <div class="d-flexeo d-row start-ali gap-2">
+                                                  <button (click)="editarUsersDash(lugar.id)" type="button" 
+                                              class="rounded-1 d-flexeo btn-genera-crud btn-editar gap-2 p-2 border border-0 trans m-0" 
+                                              type="button">
+                                                  <i class='bx bxs-edit-alt'></i>  
+                                              </button>
+                                              <button (click)="deletePlaceDash(lugar.id)" 
+                                              class="rounded-1 d-flexeo btn-genera-crud btn-elimianr gap-2 p-2 border border-0 trans m-0" 
+                                              type="button">
+                                                  <i class='bx bxs-trash'></i>
+                                              </button>
+                                          </div>
+                                      </div>                                    
+                                  </div>
+                               </div>
+                               
+                          </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <app-user-nav ></app-user-nav>
+    </div>
+  </div>
+  
+  

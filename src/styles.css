@@ -1,1 +1,284 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+:root{
+    --Blanco: #FBFBFF;
+    --Rojo: #e92027;
+    --RojoDark: #8b0e12;
+    --Negro: #040F16;
+    --Gris: #e6e6e6;
+    --GrisDark: #b0aeae;
+
+    --C-Naranja: #ffa203;
+    --C-Azul: #101584;
+    --C-AzulDark: #06082d;
+    --C-Rojo: #e92027;
+    --C-Morado: #874ccc;
+    --C-Verde: #42ae70;
+    --C-VerdeDa: #235c3c;
+}
+
+body{
+    color: var(--Negro);
+    font-family: 'Satoshi', sans-serif !important;
+  }
+
+  .bg-gris{
+    background-color: var(--Gris);
+  }
+  .bg-negro{
+    background-color: var(--Negro);
+  }
+  .color-b{
+    color: var(--Blanco);
+  }
+
+
+
+
+  .trans{
+    transition: all 0.5s ease-in-out;
+  }
+  .d-flexeo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .d-column{
+        flex-flow: column wrap;
+    }
+    .d-row{
+        flex-flow: row wrap;
+    }
+h4{
+    margin: 0 !important;
+}
+.cat-1{
+    background-color: var(--C-Naranja);
+}
+.cat-2{
+    background-color: var(--C-Azul);
+}
+.cat-3{
+    background-color: var(--C-Morado);
+}
+.cat-4{
+    background-color: var(--C-Rojo);
+}
+.cat-5{
+    background-color: var(--C-Verde);
+}
+
+/* LATERAL USER */
+.lateral-info-user{
+    justify-content: start;
+}
+    .date-container{
+        justify-content: space-between;
+    }
+        .date-container h6{
+            margin: 0;
+        }
+
+    .lateral-user-img{
+       justify-content: start;
+       align-items: start;
+    }
+        .lateral-user-img-img{
+            aspect-ratio: 1/1;
+            font-size: 3rem;
+            color: var(--Negro);
+        }
+        .user-name-item{
+            width: 50%;
+        }
+    .lateral-user-nivel{
+        color: var(--Negro);
+    }
+        .user-nivel-nivel {
+            justify-content: space-between;
+        }
+        .user-nivel-nivel div{
+            color: var(--Negro);
+            font-size: 1.5rem;
+        }
+    .user-nivel-label{
+       justify-content: space-evenly; 
+    }
+        .user-label-item{
+            font-size: 1rem;
+        }
+    .lateral-user-information{
+        color: var(--Negro);
+    }
+        .lateral-user-information-item{
+            text-align: left;
+            align-items: start;
+        }
+        .lateral-user-information-item p{
+            text-align: left;
+            width: 100%;
+            margin: 0;
+        }
+    button.button-sesion{
+        background-color: var(--Blanco);
+        color: var(--Negro);
+        justify-content: start;
+        font-size: 1.2rem;
+    }
+        .button-sesion i{
+            background-color: var(--Negro);
+            color: var(--Blanco);
+        }
+        button.button-sesion:hover{
+            background-color: var(--Rojo);
+            color: var(--Blanco);
+        }
+        button.button-sesion:hover i{
+            background-color: var(--Blanco);
+            color: var(--Rojo);
+        }
+/* LATERAL USER */
+
+
+/* NAV TOP */
+.nav-container{
+    justify-content: start;
+}
+    a.nav-item{
+        background-color: var(--Negro);
+        color: var(--Blanco);
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+        a.nav-item:hover{
+            background-color: var(--Rojo);
+            color: var(--Blanco);
+
+        }
+/* NAV TOP */
+
+
+/* HOME */
+/* .container-general{
+
+} */
+    .container-general-das{
+        justify-content: start;
+        height: 60vh;
+    }
+        .general-card{
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .items-cards-container{           
+            justify-content: start;
+        }
+            .item-card-se{
+                font-size: 1.5rem;
+                height: 25vh;
+                justify-content: space-evenly;
+                text-align: center;
+            }   
+                .item-card-se small{
+                    font-size: 1rem;
+                }   
+                .item-card-se i{
+                    color: var(--Negro);
+                    font-size: 1.5rem;
+                    margin: 0 auto;
+                }
+                .item-card-se > div{
+                    margin: 0 auto;
+                }
+
+.card-login{
+}
+    .btn-submit-form{
+        background-color: var(--Rojo);
+        color: var(--Blanco);
+    }
+        .btn-submit-form:hover{
+            background-color: var(--RojoDark);
+        }
+/* HOME */
+.container-table-user{
+    overflow: scroll;
+}
+
+/* USUARIOS */
+.btn-genera-crud{
+    margin: 0 auto;
+    color: var(--Blanco);
+    font-size: 1.2rem;
+}
+    .btn-guardar{
+        background-color: var(--C-Verde);
+        justify-content: space-between;
+    }
+        .btn-guardar:hover{
+            background-color: var(--C-VerdeDa);
+        }
+    .btn-editar{
+        background-color: var(--C-Azul);
+    }
+        .btn-editar:hover{
+            background-color: var(--C-AzulDark);
+        }
+    .btn-elimianr{
+        background-color: var(--C-Rojo);
+    }
+        .btn-elimianr:hover{
+            background-color: var(--RojoDark);
+        }
+    .container-display{
+        color: var(--Negro);
+        justify-content: space-between;
+        min-height: 28vh;
+        height: auto;
+        overflow: hidden;
+    }
+    .separre{
+        justify-content: space-between;
+    }
+    .start-ali{
+        justify-content: start;
+        align-items: start;
+        
+    }
+    .border-custom-4{
+        border-bottom: 1px solid var(--Negro);
+    }
+        .container-display i{
+            font-size: 1.2rem;
+        }
+        .container-display small{
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        .container-display p{
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+
+/* GRÁFICOS */
+.chart-card{
+    height: 40vh;
+}
+    .chart-container{
+       
+    }
+    .chart{
+        
+    }
+.centeres-chart{
+  
+}
+/* GRÁFICOS */

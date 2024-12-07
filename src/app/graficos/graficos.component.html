@@ -1,0 +1,122 @@
+<div class="row h-100">
+    <div class="col-9">
+        <div class="w-100 h-100">
+            <app-nav></app-nav>
+            <div class="w-100 h-100 container-general py-3">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <div class="carousel-item active w-100 rounded-4 bg-gris p-3 h-100 d-flexeo">
+                                        <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Suscripciones</h5>
+                                        <div id="suscripcionCarousel" class="carousel slide">
+                                            <div class="carousel-inner py-1">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#suscripcionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#suscripcionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#suscripcionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                  </div>
+                                                <div class="carousel-item active w-100 chart-card">
+                                                    <canvas id="suscripcionesBar" class="">{{suscripcionesBar}}</canvas>
+                                                </div>
+                                                <div class="carousel-item  w-100 chart-card">
+                                                    <canvas id="suscripcionesDona" class="centeres-chart">{{suscripcionesDona}}</canvas>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#suscripcionCarousel" data-bs-slide="prev">
+                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#suscripcionCarousel" data-bs-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Next</span>
+                                            </button>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="carousel-item active w-100 rounded-4 bg-gris p-3 h-100 d-flexeo">
+                                        <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Genero Usuarios</h5>
+                                        <div id="generoCarousel" class="carousel slide">
+                                            <div class="carousel-inner  py-1">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#generoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#generoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#generoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                  </div>
+                                                <div class="carousel-item active w-100 chart-card">
+                                                    <canvas id="generoPie" class="centeres-chart">{{generoPie}}</canvas>
+                                                </div>
+                                                <div class="carousel-item w-100 chart-card ">
+                                                    <canvas id="generoBar" class="">{{generoBar}}</canvas>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#generoCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                              </button>
+                                              <button class="carousel-control-next" type="button" data-bs-target="#generoCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                              </button>
+                                            
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <div class="carousel-item active w-100 rounded-4 bg-gris p-3 h-100 d-flexeo">
+                                        <h5 class="py-2 px-3 rounded-pill bg-negro color-b " style="width: fit-content;">Estado Usuarios</h5>
+                                        <div id="estadoCarousel" class="carousel slide">
+                                            <div class="carousel-inner  py-1">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#estadoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#estadoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#estadoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                  </div>
+                                                <div class="carousel-item active w-100 chart-card">
+                                                    <canvas id="estadoBar" class="centeres-chart">{{estadoBar}}</canvas>
+                                                </div>
+                                                <div class="carousel-item w-100 chart-card ">
+                                                    <canvas id="estadoPie" class="">{{estadoPie}}</canvas>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#estadoCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                              </button>
+                                              <button class="carousel-control-next" type="button" data-bs-target="#estadoCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                              </button>
+                                            
+                                          </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="w-100 h-100 rounded-4 bg-gris p-3 container-table-user overflow-hidden h-auto">
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <div class="w-100 h-100 rounded-4 bg-gris p-3 container-table-user overflow-hidden h-auto">
+                           
+                        </div>
+                    </div>
+
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <app-user-nav ></app-user-nav>
+    </div>
+</div>
+
+
